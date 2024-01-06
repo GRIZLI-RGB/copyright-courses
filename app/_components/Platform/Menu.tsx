@@ -33,6 +33,7 @@ export default function Menu() {
 			<nav>
 				{tabs.map(tab => (
 					<Link
+						key={tab.link}
 						className={clsx(
 							"flex-middle uppercase gap-2 h-[50px] text-[18px] font-medium",
 							tab.link === "news"

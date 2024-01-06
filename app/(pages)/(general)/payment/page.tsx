@@ -87,7 +87,7 @@ export default function PaymentPage() {
 					</p>
 					<ul className="py-[30px] border-y border-dashed border-light">
 						{infoData.map(({ left, right }) => (
-							<li className="text-[15px]">
+							<li key={left} className="text-[15px]">
 								<span>{left}: </span>
 								<span className="font-bold">{right}</span>
 							</li>
@@ -99,19 +99,23 @@ export default function PaymentPage() {
 						</h3>
 						<div className="flex flex-col gap-y-6">
 							{paymentMethodsData.map(paymentMethod => (
-								<div>
+								<div key={paymentMethod.title}>
 									<h5 className="mb-[18px] text-[15px] font-medium text-black">
 										{paymentMethod.title}
 									</h5>
 									<ul className="flex flex-wrap gap-4">
 										{paymentMethod.methods.map(method => (
-											<li className="w-[85px] h-[85px] border border-light rounded-[6px] flex-middle flex-col cursor-pointer hover:scale-105 transition-transform">
+											<li
+												key={method.name}
+												className="w-[85px] h-[85px] border border-light rounded-[6px] flex-middle flex-col cursor-pointer hover:scale-105 transition-transform">
 												<img
-                                                    className="h-8"
+													className="h-8"
 													src={`/img/payment-methods/${method.img}.png`}
 													alt={method.name}
 												/>
-												<span className="text-[14px] text-black/50 mt-2">{method.name}</span>
+												<span className="text-[14px] text-black/50 mt-2">
+													{method.name}
+												</span>
 											</li>
 										))}
 									</ul>
@@ -136,7 +140,9 @@ export default function PaymentPage() {
 					</h6>
 					<div className="py-[18px] my-[18px] border-y border-dashed border-light">
 						{checkInfoData.map(({ left, right }) => (
-							<div className="flex items-center justify-between">
+							<div
+								key={left}
+								className="flex items-center justify-between">
 								<span>{left}:</span>
 								<span className="underline underline-offset-2">
 									{right}
