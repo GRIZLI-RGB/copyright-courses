@@ -1,0 +1,60 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	@apply text-mainDark;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+html,
+body {
+	scroll-behavior: smooth;
+}
+
+button {
+	background: transparent;
+	outline: none;
+	border: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a,
+button {
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+input {
+    background: transparent;
+    width: 100%;
+	&:focus {
+		outline: none;
+	}
+}
+
+ul,
+ol {
+	list-style-type: none;
+}
+
+p,
+span,
+img,
+li,
+a,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	user-select: none;
+}
