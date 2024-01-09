@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const landingSlice = createSlice({
-	name: "current-tariff",
+	name: "landing",
 	initialState: {
-		value: null,
+		currentTariff: null,
 	},
 	reducers: {
 		setCurrentTariff: (state, props) => {
-			state.value = props.payload;
+			state.currentTariff = props.payload;
 		},
 	},
 });
