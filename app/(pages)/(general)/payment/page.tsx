@@ -10,7 +10,7 @@ import {
 	TPaymentMethod,
 	TPaymentMethodOnce,
 	TTariff,
-} from "@/app/types";
+} from "@/app/_utils/types";
 import toast from "react-hot-toast";
 import clsx from "clsx";
 

@@ -1,5 +1,5 @@
-import axios from "../axios";
-import { TSettings } from "../types";
+import axios from "../_utils/axios";
+import { TSettings } from "../_utils/types";
 
 /* [USERS] */
 export const createLandingOrder = async (

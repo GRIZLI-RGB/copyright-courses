@@ -16,11 +16,11 @@ export default function RootClientLayout({
 				position="bottom-right"
 				toastOptions={{
 					style: {
-                        color: "#353535",
-                        fontSize: "15px",
-                        fontWeight: "500",
-                        fontFamily: "var(--font-inter)"
-                    },
+						color: "#353535",
+						fontSize: "15px",
+						fontWeight: "500",
+						fontFamily: "var(--font-inter)",
+					},
 				}}
 			/>
 			{children}

@@ -7,7 +7,7 @@ import Header from "../_components/Landing/Header";
 import Hero from "../_components/Landing/Hero";
 import StartTraining from "../_components/Landing/StartTraining";
 import Tariffs from "../_components/Landing/Tariffs";
-import { TSettings } from "../types";
+import { TSettings } from "../_utils/types";
 import { getSettings } from "../_services/api.service";
 
 export default function Home() {

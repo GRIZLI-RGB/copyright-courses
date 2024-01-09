@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Gayathri, Inter, Noto_Sans, Open_Sans } from "next/font/google";
 
 import "./_styles/index.scss";
+import { Providers } from "@/app/_utils/providers";
 
 const inter = Inter({
 	subsets: ["cyrillic"],
@@ -29,6 +30,20 @@ const noto_sans = Noto_Sans({
 
 export const metadata: Metadata = {
 	title: "Курсы копирайтинга — начни зарабатывать на текстах прямо сейчас!",
+	icons: {
+		icon: [
+			{
+				media: '(prefers-color-scheme: dark)',
+				url: '/favicon-light.ico',
+				href: '/favicon-light.ico',
+			},
+			{
+				media: '(prefers-color-scheme: light)',
+				url: '/favicon-dark.ico',
+				href: '/favicon-dark.ico',
+			},
+		],
+	},
 };
 
 export default function RootServerLayout({
@@ -40,7 +55,7 @@ export default function RootServerLayout({
 		<html lang="ru">
 			<body
 				className={`${inter.variable} ${open_sans.variable} ${gayathri.variable} ${noto_sans.variable} font-openSans`}>
-				{children}
+				<Providers>{children}</Providers>
 			</body>
 		</html>
 	);

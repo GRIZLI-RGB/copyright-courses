@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import TariffItem from "./TariffItem";
 import Title from "./Title";
 import { setCurrentTariff } from "@/app/_store/slices/landing.slice";
-import { TTariff } from "@/app/types";
+import { TTariff } from "@/app/_utils/types";
 
 export default function Tariffs({ data }: { data: TTariff[] }) {
 	const dispatch = useDispatch();
@@ -16,6 +16,7 @@ export default function Tariffs({ data }: { data: TTariff[] }) {
 			<div className="mt-[90px] flex items-center justify-center gap-[45px]">
 				{data.map((tariff, index) => (
 					<div
+						key={tariff.access_level}
 						className={
 							index === 0
 								? "order-[0]"
