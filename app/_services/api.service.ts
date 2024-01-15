@@ -2,9 +2,17 @@ import axios from "../_utils/axios";
 import { TSettings } from "../_utils/types";
 
 /* [USERS] */
+export const getUsers = async () => {
+	try {
+		return await axios.get("users");
+	} catch (error) {
+		console.log(error);
+	}
+};
+
 export const createLandingOrder = async (
 	email: string,
-	access_level: 0 | 1 | 2 | 3,
+	access_level: 0 | 1 | 2 | 3
 ) => {
 	try {
 		return await axios.post("users/reg_begin", {

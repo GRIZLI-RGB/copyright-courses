@@ -81,7 +81,7 @@ export default function Menu() {
 						{tab.link === pathname.split("/").at(-1) && (
 							<div
 								className={
-									"h-9 w-0.5 bg-mainDark rounded-r-md absolute left-0 top-1/2 -translate-y-1/2"
+									"h-9 w-[3px] bg-mainDark rounded-r-md absolute left-0 top-1/2 -translate-y-1/2"
 								}
 							/>
 						)}

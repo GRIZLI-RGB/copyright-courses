@@ -1,3 +1,3 @@
 export default function AdminPanelHomePage() {
-	return <>HOME</>;
+	return <>[Тут вывести сводку статистики, основные метрики сайта и тому подобное]</>;
 }
