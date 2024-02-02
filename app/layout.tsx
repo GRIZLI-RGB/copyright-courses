@@ -58,5 +58,6 @@ export default function RootServerLayout({
 				<Providers>{children}</Providers>
 			</body>
 		</html>
+		
 	);
 }
