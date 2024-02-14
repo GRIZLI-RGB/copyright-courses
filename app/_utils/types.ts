@@ -1,3 +1,8 @@
+export type TNewsTag = {
+	text: string;
+	background: "green" | "red";
+};
+
 export type TTariff = {
 	icon: string;
 	name: string;
@@ -47,3 +52,5 @@ export type TPayment = {
 	sum: number;
 	user: TUser;
 };
+
+// {"landing":{"tariffs":[{"icon":"clock","name":"Name","price":100,"access_level":1,"advantages":["Сова"]},{"icon":"clock","name":"Name","price":100,"access_level":1,"advantages":["Сова"]},{"icon":"clock","name":"Name","price":100,"access_level":1,"advantages":["Сова"]}]},"payment_methods":{"title":"Бэк гандон","methods":[{"name":"СБП","img":"sbp","recipient":"recipient","requisites":"requisites"}]}}
