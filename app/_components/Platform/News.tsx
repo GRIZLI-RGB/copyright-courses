@@ -12,10 +12,10 @@ type TNews = {
 
 export default function News({ tags, title, created_date, author, children, image_url }: TNews) {
 	return (
-		<div className="rounded-2xl overflow-hidden border border-[#D9D9D9]/50 shadow-sm">
+		<div className="bg-white rounded-2xl overflow-hidden border border-[#D9D9D9]/50 shadow-sm">
 			<div className="relative">
 				{/* Теги */}
-				<div className="absolute z-10 flex gap-2 top-4 left-4">
+				<div className="absolute z-[1] flex gap-2 top-4 left-4">
 					{tags.map(tag => (
 						<span
 							key={tag.text}

@@ -28,7 +28,7 @@ const tabs = [
 
 export default function Menu() {
 	return (
-		<aside className="fixed top-0 left-0 h-full min-h-screen bg-white w-[260px] text-center border-r border-light/50">
+		<aside className="z-10 fixed top-0 left-0 h-full min-h-screen bg-white w-[260px] text-center border-r border-light/50">
 			<Logo height={74} width={74} />
 			<nav>
 				{tabs.map(tab => (

@@ -1,3 +1,5 @@
 export default function PlatformProfilePage() {
-    return <></>;
+    return <section>
+
+    </section>;
 }

@@ -1,6 +1,6 @@
 export default function Header() {
 	return (
-		<header className="fixed top-0 left-0 right-0 bg-white h-[74px] border-b border-light/50">
+		<header className="z-10 fixed top-0 left-0 right-0 bg-white h-[74px] border-b border-light/50">
 			<div className="max-w-[1400px] ml-[290px] flex items-center justify-between h-full pr-[30px]">
 				<h6 className="uppercase font-bold">Личный кабинет</h6>
 				<div className="flex items-center gap-[25px]">
