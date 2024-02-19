@@ -6,7 +6,7 @@ export default function Hero() {
 			<div className="flex items-center justify-between h-full container">
 				<div className="max-w-[700px]">
 					<h6 className="text-accent mb-1.5 font-bold text-[22px]">
-						ПИСАТЬ ТЕКСТА В 2023 ГОДУ — ИНТЕРЕСНО И ПРИБЫЛЬНО!
+						ПИСАТЬ ТЕКСТА В 2024 ГОДУ — ИНТЕРЕСНО И ПРИБЫЛЬНО!
 					</h6>
 					<h1 className="text-[48px] leading-[120%] font-bold">
 						Станьте копирайтером всего за 12 уроков
