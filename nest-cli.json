@@ -1,8 +1,23 @@
 {
-  "$schema": "https://json.schemastore.org/nest-cli",
-  "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
-  "compilerOptions": {
-    "deleteOutDir": true
-  }
+	"$schema": "https://json.schemastore.org/nest-cli",
+	"collection": "@nestjs/schematics",
+	"sourceRoot": "src",
+	"entryFile": "src/main",
+	"compilerOptions": {
+		"deleteOutDir": true,
+		"plugins": ["@nestjs/swagger"],
+		"assets": [
+			{
+				"include": "../templates",
+				"outDir": "dist/templates",
+				"watchAssets": true
+			},
+			{
+				"include": "../assets",
+				"outDir": "dist/assets",
+				"watchAssets": true
+			}
+		],
+		"watchAssets": true
+	}
 }

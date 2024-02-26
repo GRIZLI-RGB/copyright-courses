@@ -1,28 +1,29 @@
 import { Controller, Get, Body, Patch, Param, Delete } from "@nestjs/common";
-import { UsersService } from "./users.service";
 import { ApiTags } from "@nestjs/swagger";
 
+import { UsersService } from "./users.service";
+
 @ApiTags("Пользователи")
-@Controller("users")
+@Controller()
 export class UsersController {
 	constructor(private readonly usersService: UsersService) {}
 
-	@Get()
+	@Get("users")
 	getAll() {
 		return this.usersService.getAll();
 	}
 
-	@Get(":id")
+	@Get("user/:id")
 	getOneById(@Param("id") id: string) {
 		return this.usersService.getOneById(+id);
 	}
 
-	@Patch(":id")
+	@Patch("user/:id")
 	updateOneById(@Param("id") id: string, @Body() updateUserDto) {
 		return this.usersService.updateOneById(+id, updateUserDto);
 	}
 
-	@Delete(":id")
+	@Delete("user/:id")
 	removeOneById(@Param("id") id: string) {
 		return this.usersService.removeOneById(+id);
 	}

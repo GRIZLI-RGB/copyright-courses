@@ -1,16 +1,20 @@
 import { NestFactory } from "@nestjs/core";
-import { AppModule } from "./app.module";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 
-async function bootstrap() {
-	const app = await NestFactory.create(AppModule);
+import { AppModule } from "./app.module";
 
-    /* [SWAGGER] */
-	const config = new DocumentBuilder().setTitle("Курсы по копирайтингу").build();
-	const document = SwaggerModule.createDocument(app, config);
+(async () => {
+	const app = await NestFactory.create(AppModule, {
+		cors: false,
+	});
+
+	app.enableCors({ credentials: true, origin: true });
+	app.setGlobalPrefix("api");
+
+	/* [SWAGGER] */
+	const config = new DocumentBuilder().setTitle("Курсы по копирайтингу").addServer("/api").build();
+	const document = SwaggerModule.createDocument(app, config, { ignoreGlobalPrefix: true });
 	SwaggerModule.setup("swagger", app, document);
 
-	await app.listen(8080);
-}
-
-bootstrap();
+	await app.listen(9000);
+})();
