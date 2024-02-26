@@ -1,17 +1,18 @@
-import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Tree, TreeChildren, UpdateDateColumn } from "typeorm";
 
 import { Tariff } from "extra/types/tariff.type";
 import { SettingsPayment } from "extra/types/settings.payment.type";
 
-@Entity()
+@Entity("settings")
+@Tree("nested-set")
 export class SettingsEntity {
 	@PrimaryGeneratedColumn()
 	id: number;
 
-	@Column()
+	@TreeChildren()
 	tariffs: Tariff[];
 
-	@Column()
+	@TreeChildren()
 	payments: SettingsPayment[];
 
 	@UpdateDateColumn()

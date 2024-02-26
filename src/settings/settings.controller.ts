@@ -7,7 +7,7 @@ import { SettingsUpdateDto } from "./dto/settings.update.dto";
 @Controller("settings")
 @ApiTags("Настройки")
 export class SettingsController {
-	constructor(private readonly settingsService: SettingsService) {}
+	constructor(private settingsService: SettingsService) {}
 
 	@Get()
 	GET_ALL(): any {

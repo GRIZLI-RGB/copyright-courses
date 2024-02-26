@@ -3,7 +3,7 @@ import { ApiProperty } from "@nestjs/swagger";
 
 import { UserEntity } from "src/users/entities/user.entity";
 
-@Entity()
+@Entity("payments")
 export class PaymentEntity {
 	@PrimaryGeneratedColumn()
 	id: number;

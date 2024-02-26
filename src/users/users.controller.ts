@@ -6,7 +6,7 @@ import { UsersService } from "./users.service";
 @ApiTags("Пользователи")
 @Controller()
 export class UsersController {
-	constructor(private readonly usersService: UsersService) {}
+	constructor(private usersService: UsersService) {}
 
 	@Get("users")
 	getAll() {

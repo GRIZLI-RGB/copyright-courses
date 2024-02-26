@@ -13,7 +13,7 @@ export class SettingsService {
 	) {}
 
 	GET_ALL(): any {
-		return this.settingsRepository.find({});
+		return this.settingsRepository.find();
 	}
 
 	UPDATE(settingsUpdateDto: SettingsUpdateDto): any {

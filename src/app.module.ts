@@ -10,6 +10,10 @@ import { UsersModule } from "./users/users.module";
 import { SettingsModule } from "./settings/settings.module";
 import { PaymentsModule } from "./payments/payments.module";
 
+import { SettingsEntity } from "./settings/entities/settings.entity";
+import { UserEntity } from "./users/entities/user.entity";
+import { PaymentEntity } from "./payments/entities/payment.entity";
+
 @Module({
 	imports: [
 		ConfigModule.forRoot({
@@ -22,8 +26,7 @@ import { PaymentsModule } from "./payments/payments.module";
 			database: process.env.DATABASE_NAME || "postgres",
 			username: process.env.DATABASE_USER || "postgres",
 			password: process.env.DATABASE_PASSWORD || "postgres",
-			entities: [join(__dirname, "**", "*.entity.ts")],
-			migrations: [join(__dirname, "**", "*.migration.ts")],
+			entities: [SettingsEntity, UserEntity, PaymentEntity],
 			synchronize: true,
 		}),
 		MailerModule.forRoot({
