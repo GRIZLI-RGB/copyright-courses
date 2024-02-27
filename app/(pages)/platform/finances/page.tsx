@@ -6,7 +6,7 @@ import Select from "@/app/_components/Platform/Select";
 
 export default function PlatformFinancesPage() {
 	return (
-		<section className="max-w-[1350px] ml-auto grid gap-[50px]">
+		<section className="max-w-[1350px] ml-auto grid gap-12">
 			<div>
 				<Block title="Мои финансы">
 					<div className="bg-mainDark rounded-full pl-7 pr-4 mt-[30px] inline-flex items-center justify-between gap-[18px]">
@@ -70,7 +70,7 @@ export default function PlatformFinancesPage() {
 						</div>
 					</div>
 					<div className="flex-middle">
-						<button className="text-[18px] font-semibold text-center bg-mainDark h-11 max-w-[270px] rounded-full text-white w-full hover:opacity-80">
+						<button className="text-[18px] font-semibold text-center bg-mainDark h-11 max-w-[270px] rounded-full text-white w-full hover:opacity-80 pb-0.5">
 							Купить
 						</button>
 					</div>

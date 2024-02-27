@@ -39,6 +39,7 @@ export default function Menu() {
 	const pathname = usePathname();
 
 	const [accountDeleteTrigger, setAccountDeleteTrigger] = useState(false);
+	const [bePartnerTrigger, setBePartnerTrigger] = useState(false);
 
 	return (
 		<aside className="fixed top-0 left-0 h-full min-h-screen bg-white w-[260px] text-center border-r border-light/50 z-[10]">
@@ -70,12 +71,13 @@ export default function Menu() {
 				<img src="/icons/trash-can.svg" alt="Корзина" />
 				Удалить аккаунт
 			</button>
-            {/* TODO: стать партнером */}
-			{/* <div className="p-[15px] left-0 right-0 absolute bottom-0">
-				<button className="h-[50px] flex-middle w-full bg-emerald text-white rounded-[6px] text-[18px] font-bold hover:brightness-110">
+			<div className="p-[15px] left-0 right-0 absolute bottom-0">
+				<button
+					className="h-[50px] flex-middle w-full bg-emerald text-white rounded-[6px] text-[18px] font-bold hover:brightness-110"
+					onClick={() => setBePartnerTrigger(!bePartnerTrigger)}>
 					Стать партнером!
 				</button>
-			</div> */}
+			</div>
 			<ModalWindow trigger={accountDeleteTrigger} setTrigger={setAccountDeleteTrigger}>
 				<h6 className="text-[#D25757] uppercase text-[28px] font-medium text-center">Удаление аккаунта</h6>
 				<p className="mt-[22px] mb-7 text-center max-w-[390px]">
@@ -92,6 +94,19 @@ export default function Menu() {
 						className="w-full h-11 hover:opacity-80 text-[18px] font-semibold rounded-full text-[#D25757] border border-[#D25757]"
 						onClick={() => setAccountDeleteTrigger(false)}>
 						Отменить
+					</button>
+				</div>
+			</ModalWindow>
+			<ModalWindow trigger={bePartnerTrigger} setTrigger={setBePartnerTrigger}>
+				<h6 className="uppercase text-[28px] font-medium text-center">Партнерство</h6>
+				<p className="mt-[22px] mb-7 text-center max-w-[390px]">
+					К сожалению, сейчас функция партнерства недоступна для всех пользователей. Следите за новостями платформы и ждите обновления в ближайшее время!
+				</p>
+				<div className="gap-4 flex items-center justify-evenly px-4">
+					<button
+						className="w-full h-11 hover:opacity-80 text-[18px] font-semibold rounded-full text-mainDark border border-mainDark"
+						onClick={() => setBePartnerTrigger(false)}>
+						Понятно
 					</button>
 				</div>
 			</ModalWindow>

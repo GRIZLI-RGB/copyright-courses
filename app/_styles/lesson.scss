@@ -1,0 +1,31 @@
+.lesson-bold {
+	font-weight: 700;
+}
+
+.lesson-link {
+	text-decoration: underline;
+	color: #284b63;
+	&:hover {
+		opacity: 80%;
+	}
+}
+
+.addListMarkersTypeRussianAlphabet li::before {
+	margin-right: 5px; /* Расстояние от буквы до текста */
+	width: 1em; /* Ширина */
+	text-align: right; /* Выравнивание по правому краю */
+	display: inline-block; /* Строчно-блочный элемент */
+}
+
+.addListMarkersTypeRussianAlphabet li:nth-child(1)::before {
+	content: "А)";
+}
+.addListMarkersTypeRussianAlphabet li:nth-child(2)::before {
+	content: "Б)";
+}
+.addListMarkersTypeRussianAlphabet li:nth-child(3)::before {
+	content: "В)";
+}
+.addListMarkersTypeRussianAlphabet li:nth-child(4)::before {
+	content: "Г)";
+}
