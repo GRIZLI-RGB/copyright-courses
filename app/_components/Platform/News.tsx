@@ -12,10 +12,10 @@ type TNews = {
 
 export default function News({ tags, title, created_date, author, children, image_url }: TNews) {
 	return (
-		<div className="bg-white rounded-2xl overflow-hidden border border-[#D9D9D9]/50 shadow-sm">
+		<div className="rounded-2xl overflow-hidden border border-[#D9D9D9]/50 shadow-sm bg-white">
 			<div className="relative">
 				{/* Теги */}
-				<div className="absolute z-[1] flex gap-2 top-4 left-4">
+				<div className="absolute flex gap-2 top-4 left-4 z-[1]">
 					{tags.map(tag => (
 						<span
 							key={tag.text}
@@ -28,7 +28,7 @@ export default function News({ tags, title, created_date, author, children, imag
 					))}
 				</div>
 				{/* Заголовок, дата, автор */}
-				<div className="absolute bottom-[25px] left-[45px] z-10">
+				<div className="absolute bottom-[25px] left-[45px] z-[1]">
 					<h1 className="mb-1 text-white text-[48px] font-bold">{title}</h1>
 					<p className="text-white/50">
 						{created_date.toLocaleDateString()} / {author || "Администрация платформы"}

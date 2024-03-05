@@ -66,56 +66,42 @@ export default function FAQ() {
 		<section className="pt-40" id="faq">
 			<div className="container">
 				<Title>FAQ</Title>
-				<h6 className="mt-4 text-[20px] text-center">
-					Остались вопросы? Давайте решим!
-				</h6>
+				<h6 className="mt-4 text-[20px] text-center">Остались вопросы? Давайте решим!</h6>
 				<div className="mt-[70px] mb-40 grid grid-cols-2 gap-y-[50px] gap-x-[80px]">
-					{questions.map(
-						(question: {
-							title: string;
-							img: string;
-							data: any;
-						}) => (
-							<div key={question.title}>
-								<h6 className="font-bold text-[32px] leading-[100%] flex items-center mb-5 gap-3">
-									<Image
-										src={`/img/landing/faq/${question.img}.svg`}
-										alt={question.title}
-										width="48"
-										height="48"
-									/>
-									{question.title}
-								</h6>
-								<ul>
-									{Object.keys(question.data).map(
-										(dk, index) => (
-											<li
-												className="leading-[25px] cursor-pointer text-[#284b63] hover:text-[#020e36] transition-colors mb-2.5 last:mb-0"
-												key={index}
-												onClick={() => {
-													setCurrentQuestion({
-														question: dk,
-														answer: question.data[
-															dk
-														],
-													});
-													setTrigger(true);
-												}}>
-												— {dk}
-											</li>
-										),
-									)}
-								</ul>
-							</div>
-						),
-					)}
+					{questions.map((question: { title: string; img: string; data: any }) => (
+						<div key={question.title}>
+							<h6 className="font-bold text-[32px] leading-[100%] flex items-center mb-5 gap-3">
+								<Image
+									src={`/img/landing/faq/${question.img}.svg`}
+									alt={question.title}
+									width="48"
+									height="48"
+								/>
+								{question.title}
+							</h6>
+							<ul>
+								{Object.keys(question.data).map((dk, index) => (
+									<li
+										className="leading-[25px] cursor-pointer text-[#284b63] hover:text-[#020e36] transition-colors mb-2.5 last:mb-0"
+										key={index}
+										onClick={() => {
+											setCurrentQuestion({
+												question: dk,
+												answer: question.data[dk],
+											});
+											setTrigger(true);
+										}}>
+										— {dk}
+									</li>
+								))}
+							</ul>
+						</div>
+					))}
 				</div>
 			</div>
-			<ModalWindow trigger={trigger} setTrigger={setTrigger}>
+			<ModalWindow variant="faq" trigger={trigger} setTrigger={setTrigger}>
 				<div className="max-w-[650px]">
-					<p className="font-bold text-white leading-[150%]">
-						— {currentQuestion.question}
-					</p>
+					<p className="font-bold text-white leading-[150%]">— {currentQuestion.question}</p>
 					<p className="mt-[30px] text-white leading-[150%]">
 						<span className="rounded-[5px] px-2 py-[3px] font-semibold bg-[#DA8D46] text-white">
 							Ответ:
